@@ -1,0 +1,77 @@
+1)int i= 13, soma = 0, k = 0;
+  while (k < i) {
+    k = k+1;
+    soma = soma + k;   
+  }
+  printf("O resultado da soma foi: %d", soma);
+  return 0;
+}
+R: No fim, o resultado da soma foi 91.
+
+2)int verificaFibonacci(int num) {
+    int a = 0, b = 1, temp;
+
+    if (num == 0)
+        return 1;
+    
+    while (b <= num) {
+        temp = b;
+        b = a + b;
+        a = temp;
+
+        if (b == num)
+            return 1;
+    }
+    return 0;
+  }
+
+  int main() {
+    int num;
+
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+
+    if (verificaFibonacci(num))
+        printf("%d pertence a sequencia de Fibonacci.\n", num);
+    else
+        printf("%d nao pertence a sequencia de Fibonacci.\n", num);
+
+    return 0;
+  }
+
+3) a) 1, 3, 5, 7, 9
+   b) 2, 4, 8, 16, 32, 64, 128
+   c) 0, 1, 4, 9, 16, 25, 36, 49
+   d) 4, 16, 36, 64, 100
+   e) 1, 1, 2, 3, 5, 8, 13
+   f) 2,10, 12, 16, 17, 18, 19, 200
+
+4) Eu ligaria um dos 3 interruptores e aguardaria uns 5 minutos, depois desligaria ele, depois ligaria um dos outros 2 interruptores que ainda não liguei e entraria rápido na sala das lâmpadas.
+Se a lâmpada da sala que eu entrei estiver acesa, o último interruptor que liguei controla essa lâmpada, se estiver apagada e estiver fria, então o último interruptor não controla essa lâmpada. 
+A lâmpada que está acesa e quente foi controlada pelo primeiro interruptor ligado. A lâmpada que está fria é controlada pelo interruptor que não foi mexido. 
+
+5) void inverterString(char *str) {
+    
+    int comprimento = 0;
+    while (str[comprimento] != '\0') {
+        comprimento++;
+    }
+
+    for (int i = 0; i < comprimento / 2; i++) {
+        char temp = str[i];
+        str[i] = str[comprimento - 1 - i];
+        str[comprimento - 1 - i] = temp;
+    }
+}
+
+int main() {
+    char string[] = "Exemplo"; 
+
+    printf("String original: %s\n", string);
+
+    inverterString(string);
+
+    printf("String invertida: %s\n", string);
+
+    return 0;
+}
